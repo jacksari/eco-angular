@@ -22,8 +22,13 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const isLogin = ['login'].includes(route.routeConfig?.path as string);
+    const isLogin = ['login', 'register'].includes(
+      route.routeConfig?.path as string
+    );
     if (!this.authService.user && !this.authService.token) {
+      if (isLogin) {
+        return true;
+      }
       this.router.navigate(['/auth/login']);
       return false;
     }
@@ -40,7 +45,7 @@ export class AuthGuard implements CanActivate {
     // console.log('router', route.routeConfig?.path, state);
 
     if (isLogin) {
-      // this.router.navigate(['/']);
+      this.router.navigate(['/']);
     }
 
     return true;
