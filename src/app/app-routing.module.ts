@@ -13,13 +13,19 @@ const routes: Routes = [
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
     path: '',
     redirectTo: '/',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'error/404',
+    // redirectTo: 'error/404',
+    redirectTo: '/',
   },
 ];
 
