@@ -1,0 +1,19 @@
+<div class="sidebar">
+  <div class="items">
+    <ng-template ngFor let-item [ngForOf]="asideMenu" let-i="index">
+      <a
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        class="sidebar-item"
+      >
+        <i class="{{ item.icon }}"></i>
+        <p>{{ item.title }}</p>
+      </a>
+    </ng-template>
+  </div>
+
+  <a [routerLink]="['/']" class="sidebar-item">
+    <i class="las la-sign-out-alt"></i>
+    <p>Regresar</p>
+  </a>
+</div>

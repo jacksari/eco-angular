@@ -1,0 +1,7 @@
+<div class="breadcrumbs">
+  <a routerLink="/admin">Home</a>
+  <!-- <div class="ic"> -->
+    <!-- <i class="las la-angle-right"></i> -->
+  <!-- </div> -->
+  <a (click)="clickSelect()" [routerLink]="menu?.path">{{ menu?.title }}</a>
+</div>

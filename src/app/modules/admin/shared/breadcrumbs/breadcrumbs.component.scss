@@ -1,0 +1,10 @@
+.breadcrumbs{
+    display: flex;
+    align-items: center;
+    .ic{
+        margin: 0 .3rem !important;
+    }
+    a{
+        text-transform: capitalize;
+    }
+}

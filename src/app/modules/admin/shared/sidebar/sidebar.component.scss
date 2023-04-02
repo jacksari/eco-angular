@@ -1,0 +1,36 @@
+.sidebar {
+  padding: 1rem;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+//   background: green;
+  .items{
+    
+    flex: 1;
+  }
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  transition: 0.4s all ease-in-out;
+  p {
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
+  margin-bottom: 0.5rem;
+  &:hover {
+    background: var(--main-primary);
+    color: #fff;
+  }
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+.active {
+  background: var(--main-primary);
+  color: #fff;
+  p {
+  }
+}
